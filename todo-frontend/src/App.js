@@ -7,7 +7,7 @@ function App() {
   const [title, setTitle] = useState("");
   const [search, setSearch] = useState("");
 
-  const API = "http://localhost:5000/tasks";
+  const API = "https://todo-n2nq.onrender.com/tasks";
 
   const getTasks = async () => {
     const res = await axios.get(API);
