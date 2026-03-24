@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState , useCallback } from "react";
 import axios from "axios";
 import "./App.css";
 
@@ -12,7 +12,7 @@ function App() {
   const API = process.env.REACT_APP_API_URL;
 
   // Fetch all tasks
-  const getTasks = async () => {
+  const getTasks = useCallback( async () => {
     setLoading(true);
     setError("");
     try {
@@ -25,7 +25,7 @@ function App() {
      finally {
       setLoading(false);
     }
-  }
+  }, [API]);
 
   useEffect(() => {
     getTasks();
