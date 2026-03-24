@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => {
     getTasks();
-  }, []);
+  }, [getTasks]);
 
   // Add task
   const addTask = async () => {
